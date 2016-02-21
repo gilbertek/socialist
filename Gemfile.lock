@@ -176,6 +176,9 @@ GEM
     hashdiff (0.2.3)
     hashie (3.4.3)
     heapy (0.1.2)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     htmlentities (4.3.4)
     httparty (0.13.7)
       json (~> 1.8)
@@ -457,6 +460,7 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
+  html2slim
   httparty
   jbuilder (~> 2.0)
   jquery-rails

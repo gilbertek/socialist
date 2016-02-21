@@ -37,6 +37,7 @@ db/*.sqlite3
 .zeus.sock
 *.rdb
 /artifacts
+*.pdf
 
 # scm revert files
 **.orig

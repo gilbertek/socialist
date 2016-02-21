@@ -1,0 +1,51 @@
+doctype html
+
+html.no-js lang="en"
+
+  head
+    title
+      = content_for?(:title) ? yield(:title) : default_title
+
+    meta name="description" content="#{content_for?(:meta_description) ? yield(:meta_description) : default_meta_description}"
+    meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    meta name="author" content="#{copyright}"
+
+    / link rel="icon" type="image/png" href=file_path("favicon.png")
+
+    - if Rails.env.staging?
+      meta name="robots" content="noindex,nofollow"
+
+    = csrf_meta_tags
+    / = javascript_include_tag 'modernizr-3.2.0'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+
+    = yield :css
+
+  body.mobile class="#{content_for?(:body_class) ? yield(:body_class) : ''}"
+
+    = yield
+
+    // footer
+    - if content_for?(:footer)
+        = yield :footer
+    - else
+      = render 'layouts/footer'
+
+    /[if lt IE 9]
+      script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+    | <!--[if gte IE 9]><!-->
+    script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+    | <!--<![endif]-->
+
+    javascript:
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = yield :js
+

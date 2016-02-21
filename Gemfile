@@ -42,6 +42,7 @@ group :development do
   gem 'bullet'
   gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
   gem 'derailed'
+  gem 'html2slim'
   gem 'guard-annotate'
   gem 'guard-bundler'
   gem 'guard-rails'
