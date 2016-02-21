@@ -25,7 +25,6 @@ db/*.sqlite3
 *.rbc
 *.sassc
 .sass-cache
-/config/application.yml
 /db/*.javadb/
 /public/cache
 /public/stylesheets/compiled
@@ -64,3 +63,6 @@ coverage
 
 Procfile.dev
 node_modules/
+
+# Ignore application configuration
+/config/application.yml
