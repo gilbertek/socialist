@@ -6,8 +6,13 @@ gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'devise-async'
+gem 'figaro'
+gem 'gabba'
 gem 'geocoder'
+gem 'geoip'
+gem 'hiredis'
 gem 'httparty'
+gem 'icalendar'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
@@ -20,6 +25,8 @@ gem 'pundit'
 gem 'rack-cache'
 gem 'rack-cors'
 gem 'rails', '4.2.5.1'
+gem 'readthis'
+gem 'redis-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'sinatra' # for sidekiq webview
@@ -29,6 +36,17 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Omniauth
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+# Profiling gems
+gem 'flamegraph'
+gem 'memory_profiler'
+gem 'rack-mini-profiler', require: false
+gem 'stackprof'
+gem 'tunemygc', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

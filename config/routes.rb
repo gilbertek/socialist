@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, path: '',
+    controllers: {
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    }
 
   namespace :users do
     resources :accounts, only: [:show, :update, :edit]
