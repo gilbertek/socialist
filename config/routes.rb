@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     resources :settings, only: [:show, :update, :edit]
   end
 
-  authenticate :user, ->(u) { u.admin? } do
-    mount Sidekiq::Web, at: '/sidekiq'
-  end
+  # authenticate :user, ->(u) { u.admin? } do
+  #   mount Sidekiq::Web, at: '/sidekiq'
+  # end
 
   root to: 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
