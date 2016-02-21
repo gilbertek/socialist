@@ -17,13 +17,27 @@ html.no-js lang="en"
 
     = csrf_meta_tags
     / = javascript_include_tag 'modernizr-3.2.0'
+    / = stylesheet_link_tag    'application', media: 'all'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 
     = yield :css
 
   body.mobile class="#{content_for?(:body_class) ? yield(:body_class) : ''}"
 
-    = yield
+    .container
+      - flash.each do |key, value|
+        .alert.alert-"#{key}"
+          = value
+
+    = yield :top_content
+
+    .container
+      h1 = yield :header
+
+      - if content_for?(:content)
+        = yield :content
+      - else
+        = yield
 
     // footer
     - if content_for?(:footer)

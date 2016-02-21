@@ -8,10 +8,14 @@ module ApplicationHelper
   end
 
   def default_title
-    'socialist'
+    'Le Socialist'
   end
 
   def default_meta_description
+  end
+
+  def copyright
+    'Le Socialist Inc.'
   end
 
   def meta_description(description)
